@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+input, 
+button { 
+  margin: 15px;
+  border: 3px solid teal;
+  width: 175px;
+}
