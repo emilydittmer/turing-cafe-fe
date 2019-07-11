@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   addRes = (newRes) => {
-    this.setState({reservations: [...this.state.reservations, newRes] })
+    // this.setState({reservations: [...this.state.reservations, newRes] })
     
     return fetch('http://localhost:3001/api/v1/reservations', {
       method: 'POST',
