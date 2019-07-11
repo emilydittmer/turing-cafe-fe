@@ -24,26 +24,6 @@ class App extends Component {
 
   addRes = (newRes) => {
     this.setState({reservations: [...this.state.reservations, newRes] })
-    
-    return fetch('http://localhost:3001/api/v1/reservations', {
-      method: 'POST',
-      body: JSON.stringify({newRes}),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(reservations => {
-      this.setState({
-        reservations: [...this.state.reservations, newRes]
-      })
-    })
-    .catch(error => {
-      this.setState({
-        errorMessage: 'Error adding reservation'
-      })
-    })
-
   }
 
   render() {
@@ -65,5 +45,25 @@ class App extends Component {
     )
   }
 }
+// Attempt to save to local host
+// return fetch('http://localhost:3001/api/v1/reservations', {
+//   method: 'POST',
+//   body: JSON.stringify({newRes}),
+//   headers: {
+//     'Content-Type': 'application/json'
+//   }
+// })
+// .then(response => response.json())
+// .then(reservations => {
+//   this.setState({
+//     reservations: [...this.state.reservations, newRes]
+//   })
+// })
+// .catch(error => {
+//   this.setState({
+//     errorMessage: 'Error adding reservation'
+//   })
+// })
+
 
 export default App;
